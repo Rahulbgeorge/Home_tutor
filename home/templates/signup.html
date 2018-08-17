@@ -1,0 +1,74 @@
+<html>
+    <head>
+        {% load staticfiles%}
+        
+        <link rel="stylesheet" href="{%static 'bootstrap.css' %}">
+        <link rel="stylesheet" href="{%static 'bootstrap.js' %}">
+        <script src="{%static 'jquery.js' %}"></script>
+        <link rel="stylesheet" href="{%static 'signup.css' %}">
+        <script src="{%static 'signup.js' %}"></script>
+    </head>
+
+    <body>
+
+            <div class="wrapper fadeInDown">
+                    <div id="formContent">
+                      <!-- Tabs Titles -->
+                      <h2 class="active" id="signIn"> Sign In </h2>
+                      <h2 class="inactive underlineHover" id="signUp">Sign Up </h2>
+                  
+                      <!-- Icon -->
+                      <div class="fadeIn first">
+                        <img src="{%static 'signup.svg' %}" id="icon" alt="User Icon" />
+                      </div>
+
+                      <div id="signInForm">
+                      <!-- Login Form -->
+
+                      <form id="" method="POST" action="/signIn/">
+                        {% csrf_token %}
+                        <input type="text" id="login" class="fadeIn second" name="user" placeholder="login">
+                        <input type="text" id="password" class="fadeIn third" name="password" placeholder="password">
+                        <input type="submit" class="fadeIn fourth" name="submit" value="Log In">
+                      </form>
+                  
+                      <!-- Remind Passowrd -->
+                      <div id="formFooter">
+                        <a class="underlineHover" href="#">Forgot Password?</a>
+                      </div>
+                      </div>
+
+
+                      <form id="signUpForm" method="POST" action="/signUp/">
+
+                        {% csrf_token%}
+                            <input type="text" id="username" required class="fadeIn second" name="user" placeholder="Whats Your Name?">
+                            <input type="text" id="password" required class="fadeIn third" name="password" placeholder="Choose Password">
+                            <input type="email" id="email" required class="fadeIn" name="email" placeholder="Email">
+                            <select class="fadeIn" name="profession" id="profession" required>
+                                <option value="" disabled selected hidden>Choose Profession?</option>
+                                
+                                <option>Teacher</option>
+                                <option>Student</option>
+                                
+                            </select>
+                            <center>
+                            <select class="fadeIn" name="subject" id="subject">
+                              <option value="" hidden selected disabled>Choose Subject</option>
+                              <option value='1'>Maths</option>
+                              <option value='4'>Physics</option>
+                              <option value='5'>Computer Science</option>
+                              <option value='3'>Chemistry</option>
+                              <option value='6'>Social Studies</option>
+                              <option value='0'>English</option>
+                              <option value='2'>Biology</option>
+                            </select>
+                            </center>
+                            <br>
+                            <input type="submit" class="fadeIn fourth" name="submit" value="Sign Up">
+                      </form>
+                  
+                    </div>
+                  </div>
+    </body>
+</html>

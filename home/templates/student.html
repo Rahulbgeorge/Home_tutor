@@ -1,0 +1,77 @@
+<html>
+    <head>
+        {%load staticfiles%}
+        <link rel="stylesheet" href="{%static 'bootstrap.css' %}">
+        <script src="{%static 'jquery.js' %}"></script>
+        <script src="{%static 'bootstrap.js' %}"></script>
+        <script src="{%static 'student.js' %}"></script>
+        <link rel="stylesheet" href="{%static 'student.css' %}">
+        
+
+        
+    </head>
+
+
+    <body onload='recieveMyAnswer();'>
+
+            <nav><h3>Home Tutor</h3>
+                
+                
+            
+            <img src="{%static  'student_icon.png' %}" id="userIcon"></nav>
+            <div class="userDropDown"> Hello, {{user.username}}<br><hr>
+                <div class="userOption" >Settings </div><br>
+                <div class="userOption" id="payment">Payment</div><br>
+                <div class="userOption" id="logout"> Logout</div>
+            </div>            
+
+            <div class="container">
+                <center>Student Profile</center>
+            <div class="category">
+                    <div class="option active" id="allAnswers">My Answers</div>
+                    <div class="option" id="maths"> Mathematics</div>
+                    <div class="option" id="english">English</div>
+                    <div class="option" id="socialStudies">Social Studies</div>
+                    <div class="option" id="physics">Physics</div>
+                    <div class="option" id="chemistry">Chemistry</div>
+                    <div class="option" id="biology">Biology</div>
+                    <div class="option" id="computerScience">Computer Science</div>
+
+                
+            </div>
+
+            <div class="containerRight">
+               
+                    <div class="questionBox">
+                        Subject: 
+                        <select id="subject">
+                            <option value="1">Mathematics</option>
+                            <option value="0">English</option>
+                            <option value="6">Social Studies</option>
+                            <option value="4">Physics</option>
+                            <option value="3">Chemistry</option>
+                            <option value="2">Biology</option>
+                            <option value="5">Computer Science</option>
+                        </select>
+
+                        <hr>
+
+                        <textarea rows=3 cols=50 id="question"  placeholder="Ask Your Questions Here!!"></textarea>
+                        <br>
+                        <button class="btn btn-danger" id="ask">Ask</button>
+                        <div class="vacate"></div>
+                        
+                    </div>
+                
+                    <center id="replySection">
+                            
+                    </center>
+
+
+
+                    <!--End of Container-->
+            </div>
+            </div>
+        
+    </body>
+</html>
