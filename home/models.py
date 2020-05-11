@@ -21,7 +21,6 @@ class userProfile(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)
     designation=models.CharField(max_length=1)
     subject=models.IntegerField(default=-1)
-
     User.profile = property(lambda u: userProfile.objects.get_or_create(user=u)[0])
 
 
