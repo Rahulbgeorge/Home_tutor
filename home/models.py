@@ -18,7 +18,7 @@ from django.utils import timezone
 #subject -1 indicates student 
 
 class userProfile(models.Model):
-    user=models.ForeignKey(User)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
     designation=models.CharField(max_length=1)
     subject=models.IntegerField(default=-1)
 
@@ -38,10 +38,10 @@ class userProfile(models.Model):
             return False
         else:
             return True
-
+    @staticmethod
     def listTeachers():
         return UserProfile.objects.filter(designation='1')
-
+    @staticmethod
     def listStudents():
         return UserProfile.objects.filter(designation='0')
 
